@@ -19,7 +19,7 @@ module.exports = ({ env }) => ({
         providerOptions: {
             s3Options:{
           
-          endpoint: env('DO_SPACE_ENDPOINT','https://kinsman.sfo2.digitaloceanspaces.com'),
+          endpoint: env('DO_SPACE_ENDPOINT','https://sfo2.digitaloceanspaces.com'),
           region: env('DO_SPACE_REGION'),
           credentials:{
           accessKeyId: env('DO_SPACE_ACCESS_KEY'),
