@@ -1,40 +1,22 @@
-export default [
+module.exports = ({ env }) => [
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        directives: {
+          'script-src': ["'self'", "'unsafe-inline'", 'cdn.jsdelivr.net'],
+          'img-src': ["'self'", 'data:', 'cdn.jsdelivr.net', 'strapi.io', 'https://kinsman.sfo2.digitaloceanspaces.com'],
+          'media-src': ["'self'", 'data:', 'cdn.jsdelivr.net', 'strapi.io', 'https://kinsman.sfo2.digitaloceanspaces.com'],
+        },
+      }
+    },
+  },
   'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
   'strapi::body',
-  'strapi::session',
   'strapi::favicon',
   'strapi::public',
-  {
-    name: "strapi::security",
-    config: {
-      contentSecurityPolicy: {
-        useDefaults: true,
-        directives: {
-          "connect-src": ["'self'", "https:"],
-          "img-src": [
-            "'self'", 
-            "data:", 
-            "blob:", 
-            `https://kinsman.sfo2.digitaloceanspaces.com`, 
-            "dl.airtable.com", 
-            "market-assets.strapi.io"
-          ],
-            "media-src": [
-            "'self'", 
-            "data:", 
-            "blob:", 
-            `https://kinsman.sfo2.digitaloceanspaces.com`, 
-            "dl.airtable.com", 
-            "market-assets.strapi.io"
-        ],
-          upgradeInsecureRequests: null,
-        },
-      },
-    },
-  },
 ];
