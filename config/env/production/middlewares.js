@@ -8,6 +8,8 @@ module.exports = ({ env }) => [
           'img-src': [
             "'self'",
             'data:',
+            'blob:',
+            'https://market-assets.strapi.io',
             'cdn.jsdelivr.net',
             'strapi.io',
             'dl.airtable.com',
@@ -17,5 +19,4 @@ module.exports = ({ env }) => [
       },
     },
   },
-
 ];
