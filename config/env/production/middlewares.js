@@ -1,15 +1,29 @@
-module.exports = ({ env }) => [
+module.exports = [
   'strapi::errors',
   {
     name: 'strapi::security',
     config: {
       contentSecurityPolicy: {
+        useDefaults: true,
         directives: {
-          'script-src': ["'self'", "'unsafe-inline'", 'cdn.jsdelivr.net'],
-          'img-src': ["'self'", 'data:', 'cdn.jsdelivr.net', 'strapi.io', 'https://kinsman.sfo2.digitaloceanspaces.com'],
-          'media-src': ["'self'", 'data:', 'cdn.jsdelivr.net', 'strapi.io', 'https://kinsman.sfo2.digitaloceanspaces.com'],
+          'connect-src': ["'self'", 'https:'],
+          'img-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'dl.airtable.com',
+            '*.digitaloceanspaces.com',
+          ],
+          'media-src': [
+            "'self'",
+            'data:',
+            'blob:',
+            'dl.airtable.com',
+            '*.digitaloceanspaces.com',
+          ],
+          upgradeInsecureRequests: null,
         },
-      }
+      },
     },
   },
   'strapi::cors',
@@ -17,6 +31,7 @@ module.exports = ({ env }) => [
   'strapi::logger',
   'strapi::query',
   'strapi::body',
+  'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];
