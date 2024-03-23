@@ -1,0 +1,134 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero_title": {
+      "type": "string"
+    },
+    "hero_subtitle": {
+      "type": "string"
+    },
+    "hero_description": {
+      "type": "text"
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "cta_title": {
+      "type": "string"
+    },
+    "cta_subtitle": {
+      "type": "string"
+    },
+    "cta_description": {
+      "type": "text"
+    },
+    "cta_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "stats_section_title": {
+      "type": "string"
+    },
+    "about_title": {
+      "type": "string"
+    },
+    "about_description": {
+      "type": "text"
+    },
+    "icon_points": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.icon-points"
+    },
+    "our_mission_title": {
+      "type": "string"
+    },
+    "our_mission_description": {
+      "type": "string"
+    },
+    "our_mission_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "our_vision_title": {
+      "type": "string"
+    },
+    "our_vision_description": {
+      "type": "text"
+    },
+    "our_vision_image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "donate_section_title": {
+      "type": "string"
+    },
+    "donate_advice_text": {
+      "type": "text"
+    },
+    "email_address": {
+      "type": "string"
+    },
+    "cash_donation_link": {
+      "type": "string"
+    },
+    "securities_donation_link": {
+      "type": "string"
+    },
+    "thank_you": {
+      "type": "string"
+    },
+    "thank_you_text": {
+      "type": "string"
+    },
+    "contact_section_title": {
+      "type": "string"
+    },
+    "page_title": {
+      "type": "string"
+    },
+    "page_meta_description": {
+      "type": "text"
+    }
+  }
+}

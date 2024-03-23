@@ -362,32 +362,52 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageHomePage extends Schema.CollectionType {
-  collectionName: 'home_pages';
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
   info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'Home Page';
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Test: Attribute.String;
+    hero_title: Attribute.String;
+    hero_subtitle: Attribute.String;
+    hero_description: Attribute.Text;
+    hero_image: Attribute.Media;
+    cta_title: Attribute.String;
+    cta_subtitle: Attribute.String;
+    cta_description: Attribute.Text;
+    cta_image: Attribute.Media;
+    stats_section_title: Attribute.String;
+    about_title: Attribute.String;
+    about_description: Attribute.Text;
+    icon_points: Attribute.Component<'sections.icon-points', true>;
+    our_mission_title: Attribute.String;
+    our_mission_description: Attribute.String;
+    our_mission_image: Attribute.Media;
+    our_vision_title: Attribute.String;
+    our_vision_description: Attribute.Text;
+    our_vision_image: Attribute.Media;
+    donate_section_title: Attribute.String;
+    donate_advice_text: Attribute.Text;
+    email_address: Attribute.String;
+    cash_donation_link: Attribute.String;
+    securities_donation_link: Attribute.String;
+    thank_you: Attribute.String;
+    thank_you_text: Attribute.String;
+    contact_section_title: Attribute.String;
+    page_title: Attribute.String;
+    page_meta_description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -828,7 +848,7 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::home-page.home-page': ApiHomePageHomePage;
+      'api::home.home': ApiHomeHome;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
