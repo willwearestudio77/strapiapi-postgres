@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case Study"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "richtext"
+    },
+    "summary_title": {
+      "type": "string"
+    },
+    "summary_excerpt": {
+      "type": "text"
+    },
+    "hero_heading": {
+      "type": "string"
+    },
+    "hero_body": {
+      "type": "text"
+    },
+    "cover_photo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "client": {
+      "type": "string"
+    },
+    "industry": {
+      "type": "string"
+    },
+    "company_size": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "body_title": {
+      "type": "text"
+    },
+    "body": {
+      "type": "string"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "review": {
+      "type": "text"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "client_title": {
+      "type": "string"
+    },
+    "platform": {
+      "type": "enumeration",
+      "enum": [
+        "wordpress,",
+        "squarespace,",
+        "nextjs,",
+        "shopify"
+      ]
+    }
+  }
+}

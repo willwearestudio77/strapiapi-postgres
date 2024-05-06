@@ -362,56 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomeHome extends Schema.SingleType {
-  collectionName: 'homes';
-  info: {
-    singularName: 'home';
-    pluralName: 'homes';
-    displayName: 'Home';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    hero_title: Attribute.String;
-    hero_subtitle: Attribute.String;
-    hero_description: Attribute.Text;
-    hero_image: Attribute.Media;
-    cta_title: Attribute.String;
-    cta_subtitle: Attribute.String;
-    cta_description: Attribute.Text;
-    cta_image: Attribute.Media;
-    stats_section_title: Attribute.String;
-    about_title: Attribute.String;
-    about_description: Attribute.Text;
-    icon_points: Attribute.Component<'sections.icon-points', true>;
-    our_mission_title: Attribute.String;
-    our_mission_description: Attribute.String;
-    our_mission_image: Attribute.Media;
-    our_vision_title: Attribute.String;
-    our_vision_description: Attribute.Text;
-    our_vision_image: Attribute.Media;
-    donate_section_title: Attribute.String;
-    donate_advice_text: Attribute.Text;
-    email_address: Attribute.String;
-    cash_donation_link: Attribute.String;
-    securities_donation_link: Attribute.String;
-    thank_you: Attribute.String;
-    thank_you_text: Attribute.String;
-    contact_section_title: Attribute.String;
-    page_title: Attribute.String;
-    page_meta_description: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -838,6 +788,116 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
+  collectionName: 'case_studies';
+  info: {
+    singularName: 'case-study';
+    pluralName: 'case-studies';
+    displayName: 'Case Study';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    tags: Attribute.RichText;
+    summary_title: Attribute.String;
+    summary_excerpt: Attribute.Text;
+    hero_heading: Attribute.String;
+    hero_body: Attribute.Text;
+    cover_photo: Attribute.Media;
+    client: Attribute.String;
+    industry: Attribute.String;
+    company_size: Attribute.String;
+    duration: Attribute.String;
+    body_title: Attribute.Text;
+    body: Attribute.String;
+    images: Attribute.Media;
+    review: Attribute.Text;
+    avatar: Attribute.Media;
+    name: Attribute.String;
+    client_title: Attribute.String;
+    platform: Attribute.Enumeration<
+      ['wordpress,', 'squarespace,', 'nextjs,', 'shopify']
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLanguageLanguage extends Schema.CollectionType {
+  collectionName: 'languages';
+  info: {
+    singularName: 'language';
+    pluralName: 'languages';
+    displayName: 'language';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    logo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::language.language',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::language.language',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPagePage extends Schema.CollectionType {
+  collectionName: 'pages';
+  info: {
+    singularName: 'page';
+    pluralName: 'pages';
+    displayName: 'Page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    slug: Attribute.String;
+    subtitle: Attribute.String;
+    hero_heading: Attribute.String;
+    hero_image: Attribute.Media;
+    language_logos: Attribute.Media;
+    years_experience: Attribute.Integer;
+    projects_worked_on: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -848,7 +908,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::home.home': ApiHomeHome;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -857,6 +916,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::case-study.case-study': ApiCaseStudyCaseStudy;
+      'api::language.language': ApiLanguageLanguage;
+      'api::page.page': ApiPagePage;
     }
   }
 }
