@@ -6,6 +6,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
+          "frame-src": [ "http://localhost:*", "self", "sandbox.embed.apollographql.com" ],
           'connect-src': ["'self'", 'https:'],
           'img-src': [
             "'self'",
