@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "tag": {
+      "type": "enumeration",
+      "enum": [
+        "business,",
+        "web development,",
+        "tutorials"
+      ]
+    },
+    "blog_body": {
+      "type": "richtext"
+    },
+    "published_on": {
+      "type": "datetime"
+    }
+  }
+}

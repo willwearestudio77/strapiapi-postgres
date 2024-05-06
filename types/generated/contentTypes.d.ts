@@ -788,6 +788,34 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.String;
+    meta: Attribute.String;
+    heading: Attribute.String;
+    tag: Attribute.Enumeration<['business,', 'web development,', 'tutorials']>;
+    blog_body: Attribute.RichText;
+    published_on: Attribute.DateTime;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
   collectionName: 'case_studies';
   info: {
@@ -831,6 +859,135 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::case-study.case-study',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCompanyLogoCompanyLogo extends Schema.CollectionType {
+  collectionName: 'company_logos';
+  info: {
+    singularName: 'company-logo';
+    pluralName: 'company-logos';
+    displayName: 'company logo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    logo: Attribute.Media;
+    link: Attribute.String;
+    meta: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::company-logo.company-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::company-logo.company-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCvDownloadCvDownload extends Schema.SingleType {
+  collectionName: 'cv_downloads';
+  info: {
+    singularName: 'cv-download';
+    pluralName: 'cv-downloads';
+    displayName: 'cv download';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cvfile: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cv-download.cv-download',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cv-download.cv-download',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGadgetImageGadgetImage extends Schema.SingleType {
+  collectionName: 'gadget_images';
+  info: {
+    singularName: 'gadget-image';
+    pluralName: 'gadget-images';
+    displayName: 'gadget image';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Attribute.String;
+    description: Attribute.Text;
+    tech_images: Attribute.Media;
+    link: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gadget-image.gadget-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gadget-image.gadget-image',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJobHistoryJobHistory extends Schema.CollectionType {
+  collectionName: 'job_histories';
+  info: {
+    singularName: 'job-history';
+    pluralName: 'job-histories';
+    displayName: 'job_history';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+    dates: Attribute.String;
+    logo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::job-history.job-history',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::job-history.job-history',
       'oneToOne',
       'admin::user'
     > &
@@ -898,6 +1055,40 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiReviewReview extends Schema.CollectionType {
+  collectionName: 'reviews';
+  info: {
+    singularName: 'review';
+    pluralName: 'reviews';
+    displayName: 'Review';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    body: Attribute.String;
+    avatar: Attribute.Media;
+    client_title: Attribute.String;
+    client_position: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::review.review',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -916,9 +1107,15 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blog.blog': ApiBlogBlog;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
+      'api::company-logo.company-logo': ApiCompanyLogoCompanyLogo;
+      'api::cv-download.cv-download': ApiCvDownloadCvDownload;
+      'api::gadget-image.gadget-image': ApiGadgetImageGadgetImage;
+      'api::job-history.job-history': ApiJobHistoryJobHistory;
       'api::language.language': ApiLanguageLanguage;
       'api::page.page': ApiPagePage;
+      'api::review.review': ApiReviewReview;
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "cv_downloads",
+  "info": {
+    "singularName": "cv-download",
+    "pluralName": "cv-downloads",
+    "displayName": "cv download"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cvfile": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
