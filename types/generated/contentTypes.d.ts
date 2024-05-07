@@ -850,6 +850,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
       ['wordpress,', 'squarespace,', 'nextjs,', 'shopify']
     >;
     category: Attribute.String;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

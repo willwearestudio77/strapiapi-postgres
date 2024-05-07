@@ -101,6 +101,9 @@
     },
     "category": {
       "type": "string"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
