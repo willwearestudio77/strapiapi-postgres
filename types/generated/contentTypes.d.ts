@@ -822,6 +822,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
     singularName: 'case-study';
     pluralName: 'case-studies';
     displayName: 'Case Study';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -848,6 +849,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
     platform: Attribute.Enumeration<
       ['wordpress,', 'squarespace,', 'nextjs,', 'shopify']
     >;
+    category: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
