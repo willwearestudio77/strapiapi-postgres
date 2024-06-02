@@ -851,6 +851,7 @@ export interface ApiCaseStudyCaseStudy extends Schema.CollectionType {
     >;
     category: Attribute.String;
     slug: Attribute.String;
+    site_link: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

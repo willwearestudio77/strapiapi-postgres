@@ -104,6 +104,9 @@
     },
     "slug": {
       "type": "string"
+    },
+    "site_link": {
+      "type": "string"
     }
   }
 }
