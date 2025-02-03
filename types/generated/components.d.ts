@@ -13,10 +13,22 @@ export interface SectionsIconPoints extends Schema.Component {
   };
 }
 
+export interface SectionsImage extends Schema.Component {
+  collectionName: 'components_sections_images';
+  info: {
+    displayName: 'Image';
+  };
+  attributes: {
+    image: Attribute.Media;
+    alt_title: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'sections.icon-points': SectionsIconPoints;
+      'sections.image': SectionsImage;
     }
   }
 }
